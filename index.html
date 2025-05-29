@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Suhu</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Suhu</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Kalkulator Suhu</h1>
+  <div class="container">
+    <h1>Kalkulator Suhu</h1>
 
-        <!-- Input Celsius -->
-        <label for="celsius">Celsius (°C):</label>
-        <input type="number" id="celsius" placeholder="Masukkan suhu Celsius" oninput="handleCelsiusInput()">
-
-        <!-- Input Fahrenheit -->
-        <label for="fahrenheit">Fahrenheit (°F):</label>
-        <input type="number" id="fahrenheit" placeholder="Masukkan suhu Fahrenheit" oninput="handleFahrenheitInput()">
-
-        <!-- Tombol Aksi -->
-        <div class="buttons">
-            <button onclick="resetFields()">Reset</button>
-        </div>
-
-        <!-- Hasil Perhitungan -->
-        <label for="result">Cara Kalkulasi:</label>
-        <textarea id="result" rows="2" readonly></textarea>
-
-        <!-- Tautan Penjelasan -->
-        <p><a onclick="toggleExplanation()">Tampilkan Penjelasan</a></p>
-
-        <!-- Penjelasan Rumus -->
-        <div id="explanation" class="hidden">
-            <h2>Rumus Konversi</h2>
-            <p><strong>Fahrenheit = (Celsius × 9/5) + 32</strong></p>
-            <p><strong>Celsius = (Fahrenheit - 32) × 5/9</strong></p>
-        </div>
+    <!-- Grup input suhu -->
+    <div class="input-group">
+      <label for="celsius">Celsius (°C):</label>
+      <input type="number" id="celsius" placeholder="Masukkan suhu Celsius" oninput="handleCelsiusInput()">
     </div>
 
-    <script src="js/script.js"></script>
+    <div class="input-group">
+      <label for="fahrenheit">Fahrenheit (°F):</label>
+      <input type="number" id="fahrenheit" placeholder="Masukkan suhu Fahrenheit" oninput="handleFahrenheitInput()">
+    </div>
+
+    <!-- Tombol -->
+    <div class="buttons">
+      <button onclick="resetFields()">Reset</button>
+    </div>
+
+    <!-- Hasil -->
+    <div class="input-group">
+      <label for="result">Cara Kalkulasi:</label>
+      <textarea id="result" rows="2" readonly></textarea>
+    </div>
+
+    <!-- Penjelasan -->
+    <p><a onclick="toggleExplanation()">Tampilkan Penjelasan</a></p>
+
+    <div id="explanation" class="hidden">
+      <h2>Rumus Konversi</h2>
+      <p><strong>Fahrenheit = (Celsius × 9/5) + 32</strong></p>
+      <p><strong>Celsius = (Fahrenheit - 32) × 5/9</strong></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
