@@ -1,6 +1,5 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +9,32 @@
 <body>
     <div class="container">
         <h1>Kalkulator Suhu</h1>
-        <label for="celsius">Celsius (°C):</label>
-        <textarea id="celsius" rows="2"></textarea>
 
+        <!-- Input Celsius -->
+        <label for="celsius">Celsius (°C):</label>
+        <input type="number" id="celsius" placeholder="Masukkan suhu Celsius" oninput="handleCelsiusInput()">
+
+        <!-- Input Fahrenheit -->
+        <label for="fahrenheit">Fahrenheit (°F):</label>
+        <input type="number" id="fahrenheit" placeholder="Masukkan suhu Fahrenheit" oninput="handleFahrenheitInput()">
+
+        <!-- Tombol Aksi -->
         <div class="buttons">
-            <button onclick="convertTemperature()">Konversi</button>
             <button onclick="resetFields()">Reset</button>
-            <button onclick="reverseConversion()">Reverse</button>
         </div>
 
-        <label for="fahrenheit">Fahrenheit (°F):</label>
-        <textarea id="fahrenheit" rows="2" readonly></textarea>
-
+        <!-- Hasil Perhitungan -->
         <label for="result">Cara Kalkulasi:</label>
         <textarea id="result" rows="2" readonly></textarea>
 
-        <p><a href="#" onclick="showReverseExplanation()">Fahrenheit ke Celsius</a></p>
+        <!-- Tautan Penjelasan -->
+        <p><a onclick="toggleExplanation()">Tampilkan Penjelasan</a></p>
 
-        <div id="explanation">
-            <h2>Cara Konversi Dari Celsius (°C) ke Fahrenheit (°F)</h2>
-            <p>Suhu <em>S</em> dalam derajat Fahrenheit (°F) sama dengan suhu <em>S</em> dalam derajat Celsius (°C) kali <strong>9/5</strong> tambah <strong>32</strong>.</p>
-            <p><strong>S(°F) = (S(°C) × 9/5) + 32</strong></p>
-            <p>atau</p>
-            <p><strong>S(°F) = (S(°C) × 1.8) + 32</strong></p>
+        <!-- Penjelasan Rumus -->
+        <div id="explanation" class="hidden">
+            <h2>Rumus Konversi</h2>
+            <p><strong>Fahrenheit = (Celsius × 9/5) + 32</strong></p>
+            <p><strong>Celsius = (Fahrenheit - 32) × 5/9</strong></p>
         </div>
     </div>
 
